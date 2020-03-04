@@ -10,7 +10,7 @@ return `
   [Tests] (#tests)
   [Usage] (#usage)
   [Contributing] (#contributing)
-  [Liscence] (#liscence)
+  [license] (#license)
   [Questions] (#questions)
 
  # Installation
@@ -30,7 +30,7 @@ return `
  ${data.contributing}
 
  # Liscence
- ${data.liscence}
+ ${data.license}
 
 # Questions
 If You Have any Questions, You can Reach Me at My [Email]${data.email}

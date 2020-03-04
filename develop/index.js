@@ -1,10 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path")
 const util = require("util");
 const api = require("./utils/api");
-const axios = require ("axios")
-const generate = require("./utils/generateMarkdown").default;
-const async = util.promisify(fs.writeFile);
+// const axios = require ("axios")
+const generateMarkdown = require("./utils/generateMarkdown");
+// const asyncFunctionWrite = util.promisify(fs.writeFile);
+// const asyncFunctionRead = util.promisify(fs.readFile)
 
 const questions = [
   {
@@ -56,41 +58,47 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-  async(fileName, data)
-    .then(function() {
-      console.log("Success");
-    })
-    .catch(error => {
-      console.log("faliure");
-    });
+  return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+//   (fileName, data)
+    // .then(function() {
+    //   console.log("Success");
+    // })
+    // .catch(error => {
+    //   console.log("faliure");
+    // });
 }
 
 function init() {
   inquirer.prompt(questions).then(response => {
 
-    axios
-      .get(api.username)
-      .then(response => {
-        const data = {
-          username: response.github,
-          title: response.title,
-          description: response.description,
-        //   TableOfC,
-          installation: response.installation,
-          usage: response.usage,
-          tests: response.tests,
-          liscence: response.liscence,
-          contribution: response.contribution,
-          name: response.data.login,
-          email: "emersondowning@gmail.com",
-          profilePhoto: response.data.avatar_url
-        };
-        const renderedContent = generateMarkdown(data);
-        async("READme.md", readmeContent);
+    // axios
+    api
+      .getUser(response.github)
+      .then(({data})=>{
+          writeToFile("README.MD", generateMarkdown({...response, ...data}));
+          
       })
-      .catch(error => {
-        if (error) throw error;
-      });
+    //   .then(response => {
+    //     const data = {
+    //       username: response.github,
+    //       title: response.title,
+    //       description: response.description,
+    //     //   TableOfC,
+    //       installation: response.installation,
+    //       usage: response.usage,
+    //       tests: response.tests,
+    //       liscence: response.liscence,
+    //       contribution: response.contribution,
+    //       name: response.data.login,
+    //     //   email: "emersondowning@gmail.com",
+    //       profilePhoto: response.data.avatar_url
+    //     };
+    //     const renderedContent = generateMarkdown(data);
+    //     asyncFunctionRead("READme.md", readmeContent);
+    //   })
+    //   .catch(error => {
+    //     if (error) throw error;
+    //   });
   });
 }
 
