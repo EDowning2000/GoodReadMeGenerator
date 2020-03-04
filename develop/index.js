@@ -1,9 +1,9 @@
-const inquirer = require('inquirer')
-const fs = require('fs')
-const util = require('util')
-const axios = require('axios')
-const generate = require ('./utils/generateMarkdown')
-
+const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require('util');
+const axios = require('axios');
+const generate = require('./utils/generateMarkdown').default;
+const async = util.promisify(fs.writeFile);
 const questions = [
   {
     type: 'input',
@@ -53,23 +53,17 @@ const questions = [
 },
 ];
 
-function writeToFile(data) {
-    console.log(generate)
-    generate(data).then(newData=>{
-        console.log(newData)
+function writeToFile(fileName, data) {
+    async(fileName, data).then(function(){
+        console.log("Success")
     })
-
-        fs.writeFile("README.md", JSON.stringify(data), function (err){
-            if (err) throw (err)
-        })
-
+    .catch(error =>{
+        console.log("faliure")
+    })
 }
 
 function init() {
-  console.log(questions)
   inquirer.prompt(questions).then(data => {
-    //   console.log(data)
-
         writeToFile(data)
   })
 
