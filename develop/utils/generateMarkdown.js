@@ -8,7 +8,7 @@ Module.exports = generateMarkdown;
   # Table of Contents
   [Installation] (#installation)
   [Tests] (#tests)
-  [Useage] (#useage)
+  [Usage] (#usage)
   [Contributing] (#contributing)
   [Liscence] (#liscence)
   [Questions] (#questions)
@@ -23,7 +23,7 @@ Module.exports = generateMarkdown;
 
  # Usage
  How to Use This Program
- ${data.useage}
+ ${data.usage}
 
  # Contributing
  How Users can Contribute 

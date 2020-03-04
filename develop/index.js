@@ -63,8 +63,26 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-  inquirer.prompt(questions).then(data => {
-        writeToFile(data)
+  inquirer.prompt(questions).then(response => {
+        const queryURL = `https://api.github.com/users/${response.github}`
+
+            axios.get(queryURL).then(response => {
+                const data ={
+                    username : response.github,
+                    title : response.title, 
+                    description : response.description,
+                    TableOfC, 
+                    installation : response.installation,
+                    usage : response.usage,
+                    tests : response.tests,
+                    liscence : response.liscence,
+                    contribution : response.contribution,
+                    name : response.data.login,
+                    email : "emersondowning@gmail.com",
+                    profilePhoto : response.data.avatar_url
+                }
+
+            })
   })
 
 
