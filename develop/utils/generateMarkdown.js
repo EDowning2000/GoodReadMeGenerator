@@ -1,33 +1,21 @@
 module.exports = generateMarkdown=(data)=> {
   console.log(data)
-  var newData = `
+  return newData = `
+  # ${data.title}
 
-  #github Username
-### ${data.github}
+  # Description
+  ${data.description}
 
-# Title
-###${data.title}
+  # Table of Contents
+  [Installation] (#installation)
+  [Tests] (#tests)
+  [Useage] (#useage)
+  [Contributing] (#contributing)
+  [Liscence] (#liscence)
 
-#Description of The Project
-### ${data.description}
-
-#Commands to Install Dependencies 
-### ${data.installation}
-
-#Command to Run Testing 
-### ${data.tests}
-
-#Usage Information
-### ${data.usage}
-
-#How Can the User Contribute 
-### ${data.contributing}
-
-#Liscence 
-### ${data.liscence}
 
 `;
-return newData
+
 }
 
 
