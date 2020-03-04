@@ -1,5 +1,5 @@
-Module.exports = generateMarkdown;
-  return newData = `
+function generateMarkdown (data){
+return `
   # ${data.title}
 
   # Description
@@ -37,5 +37,5 @@ If You Have any Questions, You can Reach Me at My [Email]${data.email}
 
 <img src="${data.profilePhoto}" alt="Github Avatar"
 `;
-
-
+}
+module.exports=generateMarkdown;
