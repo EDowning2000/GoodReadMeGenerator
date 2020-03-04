@@ -1,9 +1,11 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const axios = require("axios");
+const api = require("./utils/api");
+const axios = require ("axios")
 const generate = require("./utils/generateMarkdown").default;
 const async = util.promisify(fs.writeFile);
+
 const questions = [
   {
     type: "input",
@@ -65,16 +67,15 @@ function writeToFile(fileName, data) {
 
 function init() {
   inquirer.prompt(questions).then(response => {
-    const queryURL = `https://api.github.com/users/${response.github}`;
 
     axios
-      .get(queryURL)
+      .get(api.username)
       .then(response => {
         const data = {
           username: response.github,
           title: response.title,
           description: response.description,
-          TableOfC,
+        //   TableOfC,
           installation: response.installation,
           usage: response.usage,
           tests: response.tests,
