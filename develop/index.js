@@ -29,18 +29,18 @@ const questions = [
   },
   {
     type: "input",
-    message: "What command to install the dependencies?",
+    message: "What command to install the necessary packages?",
     name: "installation",
     default: "Installation"
   },
   {
     type: "input",
-    message: "What command to run the testing?",
+    message: "What command to run the testing for this application?",
     name: "tests"
   },
   {
     type: "input",
-    message: "What should the user know to use this page.",
+    message: "What should the user know to use this page?",
     name: "usage",
     default: "Usage"
   },
