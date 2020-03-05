@@ -32,12 +32,12 @@ The readme should have all of the following
   This application will make you and your repo a readme, based on questions that it asks you in the command line
 
   # Table of Contents
-  *[Installation] (#installation)
-  *[Tests] (#tests)
-  *[Usage] (#usage)
-  *[Contributing] (#contributing)
-  *[License] (#license)
-  *[Questions] (#questions)
+  * [Installation] (#installation)
+  * [Tests] (#tests)
+  * [Usage] (#usage)
+  * [Contributing] (#contributing)
+  * [License] (#license)
+  * [Questions] (#questions)
 
  # Installation
  Run This Snippet to Run Dependencies 
