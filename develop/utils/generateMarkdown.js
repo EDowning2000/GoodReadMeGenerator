@@ -8,12 +8,12 @@ return `
   ${data.description}
 
   # Table of Contents
-  [Installation] (#installation)
-  [Tests] (#tests)
-  [Usage] (#usage)
-  [Contributing] (#contributing)
-  [license] (#license)
-  [Questions] (#questions)
+  *[Installation] (#installation)
+  *[Tests] (#tests)
+  *[Usage] (#usage)
+  *[Contributing] (#contributing)
+  *[License] (#license)
+  *[Questions] (#questions)
 
  # Installation
  Run This Snippet to Run Dependencies 

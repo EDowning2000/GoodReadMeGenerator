@@ -1,18 +1,18 @@
 
-  # ReadMe Generator
+  # Readme Generator
 
   ![](https://img.shields.io/badge/License-MIT-important)
 
   # Description
-  This project will generate a readme based on the questions you answer in the command line 
+  This application will make you and your repo a readme, based on questions that it asks you in the command line
 
   # Table of Contents
-  [Installation] (#installation)
-  [Tests] (#tests)
-  [Usage] (#usage)
-  [Contributing] (#contributing)
-  [license] (#license)
-  [Questions] (#questions)
+  *[Installation] (#installation)
+  *[Tests] (#tests)
+  *[Usage] (#usage)
+  *[Contributing] (#contributing)
+  *[License] (#license)
+  *[Questions] (#questions)
 
  # Installation
  Run This Snippet to Run Dependencies 
@@ -29,11 +29,11 @@
 
  # Usage
  How to Use This Program <br />
- They must first install all packages, and then run it in their command line 
+ Dont forget to install all the necessary packages 
 
  # Contributing
  How Users can Contribute <br />
- by adding better or more questions 
+ Adding more questions, or detail to the questions.
 
  # Liscence <br />
  MIT
